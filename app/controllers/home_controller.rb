@@ -4,7 +4,16 @@ class HomeController < ApplicationController
   end
 
   def check
-    @hand = hand[:params]
+    @card = params[:cards]
+    card = CardSet.new(@card)
+
+    if (#error mesage? Y:N)
+    card.judge
+    else
+    render("/home")
+    end
+
+
 
 
 
